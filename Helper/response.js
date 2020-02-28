@@ -16,8 +16,6 @@ class Response{
                     return this.keepLink();
                     break;
         }
-        
-
         }
     }
     keepLink(){
