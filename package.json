@@ -1,0 +1,14 @@
+{
+  "name": "simplenodejsserver",
+  "version": "1.0.0",
+  "description": "server for get smartwatch data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "masood ghasemi",
+  "license": "ISC",
+  "dependencies": {
+    "mariadb": "^2.2.0"
+  }
+}
