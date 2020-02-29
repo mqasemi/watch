@@ -48,7 +48,7 @@ const express = require('express');
             // });
         });
         sock.on('error', function(data) {
-           console.log(data);
+         
         });
         // Add a 'close' event handler to this instance of socket
         sock.on('close', function(data) {

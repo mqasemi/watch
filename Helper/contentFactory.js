@@ -28,7 +28,7 @@ const PositionData = require('../model/positionsData');
                 }
                 
                 break;
-            case "UD":
+            case "UD" ,"UD2","AL":
                 if(this.contents.length>=17){
                     content=new PositionData();
                     content.date = this.contents[1];

@@ -15,6 +15,9 @@ class Response{
                 case"TKQ2":
                     return this.keepLink();
                     break;
+                case"AL":
+                    return this.keepLink();
+                    break;
         }
         }
     }
