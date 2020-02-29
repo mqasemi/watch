@@ -9,6 +9,7 @@
   "author": "masood ghasemi",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "mariadb": "^2.2.0"
   }
 }
