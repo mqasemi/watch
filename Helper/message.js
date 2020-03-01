@@ -4,11 +4,16 @@
      length;
      command;
      content;
+     params;
      toString(){
           let contentStr='';
           if(this.content!=null)
                contentStr=this.content.toString();
           contentStr=this.command + contentStr;
+          if(this.params!=null){
+               paramstr=this.params.join(",");
+               contentStr=contentStr+","+paramstr;
+          }
           let contentLength=(contentStr.split ('').map (function (c) { return c.charCodeAt (0); })).length;
           var hex = ('0000' + contentLength.toString(16).toUpperCase()).slice(-4); //009A
           let finalmessage='['+this.manufacture+'*'+this.id+'*'+hex+'*'+contentStr+']';

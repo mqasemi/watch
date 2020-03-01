@@ -3,6 +3,7 @@
  const MessageParser = require('./Helper/MessageParser');
  const Response = require('./Helper/response');
 const express = require('express');
+const Message =require('./Helper/message');
 
 
 (function(exports, require, module, __filename, __dirname) {
@@ -19,9 +20,17 @@ const express = require('express');
     });
    
     let sockets = [];
-    app.get('/test', (req, res) =>{
-        console.log(sockets);
-        res.send('Hello World!');
+    app.get('/setInterSal/:id', (req, res) =>{
+        if(sockets.length>=1){
+            let message=new Message();
+            message.manufacture="3G";
+            message.content=null;
+            message.command="UPLOAD";
+            message.id=""
+            sockets[0].write("test");
+
+        }
+            
     })
 
     app.listen(commandPort, () => console.log(`Example app listening on port ${commandPort}!`))
