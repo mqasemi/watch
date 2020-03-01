@@ -11,7 +11,7 @@
                contentStr=this.content.toString();
           contentStr=this.command + contentStr;
           if(this.params!=null){
-               paramstr=this.params.join(",");
+              let paramstr=this.params.join(",");
                contentStr=contentStr+","+paramstr;
           }
           let contentLength=(contentStr.split ('').map (function (c) { return c.charCodeAt (0); })).length;

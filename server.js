@@ -20,14 +20,17 @@ const Message =require('./Helper/message');
     });
    
     let sockets = [];
-    app.get('/setInterSal/:id', (req, res) =>{
+    app.get('/setInterSal/:id/:deviceId', (req, res) =>{
         if(sockets.length>=1){
             let message=new Message();
             message.manufacture="3G";
             message.content=null;
             message.command="UPLOAD";
-            message.id=""
-            sockets[0].write("test");
+            message.params=[];
+            message.params.push(req.params.id);
+            message.id=req.params.deviceId;
+            
+            sockets[0].write(message.toString());
 
         }
             

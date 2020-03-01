@@ -18,6 +18,8 @@ class Response{
                 case"AL":
                     return this.keepLink();
                     break;
+                case "UPLOAD":
+                    return this.keepLink();
         }
         }
     }
