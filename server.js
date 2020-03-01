@@ -23,14 +23,15 @@ const Message =require('./Helper/message');
     app.get('/setInterSal/:id/:deviceId', (req, res) =>{
         if(sockets.length>=1){
             let message=new Message();
+            
             message.manufacture="3G";
             message.content=null;
             message.command="UPLOAD";
             message.params=[];
             message.params.push(req.params.id);
             message.id=req.params.deviceId;
-            
-            sockets[0].write(message.toString());
+            var buffer = Buffer.from(message.toString());
+            sockets[0].write(buffer);
 
         }
             
@@ -51,8 +52,12 @@ const Message =require('./Helper/message');
            let response=new Response(mess);
             console.log('DATA ' + sock.remoteAddress + ': ' + mess);
             responseStr=response.createResponse();
-            if(responseStr && responseStr.length>0)
-                sock.write(responseStr);
+            
+            if(responseStr && responseStr.length>0){
+                var buffer = Buffer.from(responseStr);
+                sock.write(buffer);
+            }
+                
             
             // Write the data back to all the connected, the client will receive it as data from the server
             // sockets.forEach(function(sock, index, array) {

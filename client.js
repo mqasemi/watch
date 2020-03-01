@@ -9,7 +9,7 @@ client.connect(port, host, function() {
     client.write("[3G*9403094122*00CD*UD]");
 });
 client.on('data', function(data) {
-    console.log('Server Says : ' + data);
+    console.log('Server Says : ' + data.toString('ascii'));
 });
 client.on('close', function() {
     console.log('Connection closed');

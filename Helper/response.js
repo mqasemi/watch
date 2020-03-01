@@ -26,7 +26,7 @@ class Response{
     keepLink(){
         const response={...this.message};
         this.message.content=null;
-        return this.message.toString();
+        return this.message.toByte();
     }
     
 
